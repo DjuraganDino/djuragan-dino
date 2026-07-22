@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "DJURAGAN DINO | Jasa Joki Whiteout Survival",
-
   description:
     "Jasa Joki Whiteout Survival terpercaya. Daily Activity, Bear Trap, Frostfire Mine, Dreamscape Memory, Foundry Battle, hingga Sunfire Castle.",
 
@@ -39,28 +38,16 @@ export const metadata: Metadata = {
 
   creator: "DJURAGAN DINO",
 
-  applicationName: "DJURAGAN DINO",
-
-  category: "Gaming",
-
   metadataBase: new URL("https://djuragan-dino.vercel.app"),
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
 
   icons: {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
+  },
+
+  verification: {
+    google: "8_RtzrEKfqkxOJZLygfti_uNGA-5fZFo-fwDA7qjX8c",
   },
 
   openGraph: {
@@ -69,8 +56,6 @@ export const metadata: Metadata = {
       "Jasa Joki Whiteout Survival terpercaya. Aman, cepat, dan transparan.",
     url: "https://djuragan-dino.vercel.app",
     siteName: "DJURAGAN DINO",
-    locale: "id_ID",
-    type: "website",
     images: [
       {
         url: "/images/logo.png",
@@ -79,6 +64,8 @@ export const metadata: Metadata = {
         alt: "DJURAGAN DINO",
       },
     ],
+    locale: "id_ID",
+    type: "website",
   },
 
   twitter: {
@@ -87,10 +74,6 @@ export const metadata: Metadata = {
     description: "Jasa Joki Whiteout Survival terpercaya.",
     images: ["/images/logo.png"],
   },
-};
-
-export const viewport: Viewport = {
-  themeColor: "#08111E",
 };
 
 export default function RootLayout({
