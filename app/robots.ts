@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
 
-    sitemap: "https://djuragandino.com/sitemap.xml",
+    sitemap: "https://djuragan-dino.vercel.app/sitemap.xml",
   };
 }
