@@ -1,3 +1,5 @@
+"use client";
+
 import { event } from "@/lib/gtag";
 
 export default function FloatingWhatsApp() {
