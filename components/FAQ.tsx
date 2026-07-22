@@ -4,66 +4,67 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Apakah akun saya aman saat menggunakan jasa joki?",
+    question: "Apakah akun saya aman?",
     answer:
-      "Ya. Keamanan akun adalah prioritas kami. Kami menjaga kerahasiaan data akun dan tidak akan mengubah email maupun password tanpa izin Anda.",
+      "Ya. Akun Anda aman. Kami menjaga kerahasiaan data login dan tidak akan mengubah informasi akun tanpa izin.",
   },
   {
-    question: "Berapa lama proses joki selesai?",
+    question: "Berapa lama proses pengerjaan?",
     answer:
-      "Waktu pengerjaan tergantung jenis layanan yang dipilih. Kami akan memberikan estimasi sebelum proses dimulai dan selalu mengabarkan progres pengerjaan.",
-  },
-  {
-    question: "Bagaimana sistem pembayarannya?",
-    answer:
-      "Pembayaran dilakukan di awal sebelum proses joki dimulai. Untuk layanan tertentu dapat didiskusikan sesuai kesepakatan.",
-  },
-  {
-    question: "Apakah saya akan mendapatkan update progress?",
-    answer:
-      "Tentu. Kami akan mengirimkan update progres secara berkala melalui WhatsApp agar Anda mengetahui perkembangan akun Anda.",
+      "Tergantung layanan yang dipilih. Daily Activity dikerjakan setiap hari, sedangkan event mengikuti jadwal Whiteout Survival.",
   },
   {
     question: "Apakah bisa request jam pengerjaan?",
     answer:
-      "Bisa. Jika Anda memiliki permintaan waktu tertentu, silakan sampaikan sebelum proses dimulai dan kami akan menyesuaikan semaksimal mungkin.",
+      "Bisa. Selama jadwal kami tersedia, kami akan menyesuaikan waktu pengerjaan.",
+  },
+  {
+    question: "Bagaimana sistem pembayarannya?",
+    answer:
+      "Pembayaran dilakukan di awal melalui transfer atau metode pembayaran yang disepakati.",
+  },
+  {
+    question: "Apakah ada garansi?",
+    answer:
+      "Kami menjamin pengerjaan sesuai layanan yang dipilih dengan proses yang aman dan transparan.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-3">
-          Pertanyaan yang Sering Ditanyakan
+    <section id="faq" className="bg-[#08111E] py-24">
+      <div className="mx-auto max-w-4xl px-6">
+        <h2 className="mb-4 text-center text-5xl font-black text-cyan-400">
+          FAQ
         </h2>
 
-        <p className="text-center text-gray-500 mb-12">
-          Semua yang perlu Anda ketahui sebelum menggunakan jasa DJURAGAN DINO.
+        <p className="mb-12 text-center text-gray-400">
+          Pertanyaan yang sering ditanyakan pelanggan.
         </p>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden transition"
+              className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-[#0D1B2A] shadow-lg"
             >
               <button
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-                className="w-full px-6 py-5 flex justify-between items-center text-left font-semibold hover:bg-gray-50"
+                onClick={() => setOpen(open === index ? null : index)}
+                className="flex w-full items-center justify-between bg-[#0D1B2A] px-6 py-5 transition-all duration-300 hover:bg-[#13283E]"
               >
-                <span>{faq.question}</span>
-                <span className="text-cyan-500 text-xl">
-                  {openIndex === index ? "−" : "+"}
+                <span className="text-left text-lg font-semibold text-white">
+                  {faq.question}
+                </span>
+
+                <span className="text-2xl font-bold text-cyan-400">
+                  {open === index ? "−" : "+"}
                 </span>
               </button>
 
-              {openIndex === index && (
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+              {open === index && (
+                <div className="border-t border-cyan-500/20 bg-[#102235] px-6 py-5 text-gray-300">
                   {faq.answer}
                 </div>
               )}
