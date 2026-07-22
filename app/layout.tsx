@@ -20,6 +20,44 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://djuragan-dino.vercel.app"),
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://djuragan-dino.vercel.app/#organization",
+      name: "DJURAGAN DINO",
+      url: "https://djuragan-dino.vercel.app",
+      logo: "https://djuragan-dino.vercel.app/logo.png",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+6288294084382",
+        contactType: "customer service",
+        availableLanguage: "id",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://djuragan-dino.vercel.app/#website",
+      url: "https://djuragan-dino.vercel.app",
+      name: "DJURAGAN DINO",
+      publisher: {
+        "@id": "https://djuragan-dino.vercel.app/#organization",
+      },
+    },
+    {
+      "@type": "Service",
+      serviceType: "Jasa Joki Whiteout Survival",
+      provider: {
+        "@id": "https://djuragan-dino.vercel.app/#organization",
+      },
+      areaServed: "Indonesia",
+      description:
+        "Jasa Joki Whiteout Survival terpercaya. Daily Activity, Bear Trap, Frostfire Mine, Dreamscape Memory, Foundry Battle, hingga Sunfire Castle.",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,6 +76,16 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "xqlpqwyvyg");
           `}
         </Script>
+
+        {/* Schema.org */}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
       </head>
 
       <body
