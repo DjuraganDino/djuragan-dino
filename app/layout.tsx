@@ -1,24 +1,54 @@
-import { event } from "@/lib/gtag";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 
-export default function FloatingWhatsApp() {
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "DJURAGAN DINO | Jasa Joki Whiteout Survival",
+  description:
+    "Jasa Joki Whiteout Survival terpercaya. Daily Activity, Bear Trap, Frostfire Mine, Dreamscape Memory, Foundry Battle, hingga Sunfire Castle.",
+
+  metadataBase: new URL("https://djuragan-dino.vercel.app"),
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <a
-      href="https://wa.me/6288294084382"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => {
-        console.log("WHATSAPP CLICK");
+    <html lang="id">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#08111E] text-white`}
+      >
+        {children}
 
-        event({
-          action: "click_whatsapp",
-          category: "engagement",
-          label: "floating_button",
-          value: 1,
-        });
-      }}
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-green-500 px-6 py-4 text-white font-bold shadow-2xl transition hover:scale-110 hover:bg-green-600"
-    >
-      💬 Order via WhatsApp
-    </a>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G9LC9DB2ZN"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+
+            gtag('js', new Date());
+            gtag('config', 'G-G9LC9DB2ZN');
+          `}
+        </Script>
+      </body>
+    </html>
   );
 }

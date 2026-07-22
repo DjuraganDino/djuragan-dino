@@ -9,7 +9,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => {
-        console.log("WHATSAPP CLICKED");
+        console.log("WHATSAPP CLICK");
 
         event({
           action: "click_whatsapp",
