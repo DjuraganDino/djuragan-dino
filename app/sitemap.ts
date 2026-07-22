@@ -1,9 +1,11 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://djuragan-dino.vercel.app";
+
   return [
     {
-      url: "https://djuragan-dino.vercel.app",
+      url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
