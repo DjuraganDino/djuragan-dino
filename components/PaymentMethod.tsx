@@ -21,7 +21,7 @@ export default function PaymentMethod() {
       <div className="relative mx-auto max-w-7xl px-6">
 
         <div className="text-center">
-          <p className="uppercase tracking-[4px] font-semibold text-cyan-400">
+          <p className="font-semibold uppercase tracking-[4px] text-cyan-400">
             Payment
           </p>
 
@@ -31,7 +31,8 @@ export default function PaymentMethod() {
 
           <p className="mx-auto mt-5 max-w-3xl text-gray-400">
             Kami menerima pembayaran melalui <b>QRIS</b> yang dapat dipindai
-            menggunakan berbagai aplikasi E-Wallet maupun Mobile Banking di Indonesia.
+            menggunakan berbagai aplikasi E-Wallet maupun Mobile Banking di
+            Indonesia.
           </p>
         </div>
 
@@ -43,7 +44,7 @@ export default function PaymentMethod() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-cyan-500/20 bg-white/5 p-8"
+            className="rounded-3xl border border-cyan-500/20 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.18)]"
           >
             <div className="mb-8 flex items-center gap-3">
               <QrCode size={30} className="text-cyan-400" />
@@ -64,7 +65,7 @@ export default function PaymentMethod() {
 
                 <div
                   key={item}
-                  className="rounded-xl border border-cyan-500/20 bg-[#0D1B2A] p-5 text-center"
+                  className="cursor-pointer rounded-xl border border-cyan-500/20 bg-[#0D1B2A] p-5 text-center transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:bg-[#13243a] hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
                 >
                   <Wallet className="mx-auto mb-3 text-cyan-400" />
 
@@ -73,7 +74,9 @@ export default function PaymentMethod() {
 
               ))}
 
-              <div className="col-span-2 rounded-xl border border-cyan-500/20 bg-[#0D1B2A] p-5 text-center">
+              <div
+                className="col-span-2 cursor-pointer rounded-xl border border-cyan-500/20 bg-[#0D1B2A] p-5 text-center transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:bg-[#13243a] hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
+              >
                 <Landmark className="mx-auto mb-3 text-cyan-400" />
 
                 <p>Seluruh Mobile Banking yang Mendukung QRIS</p>
@@ -96,7 +99,7 @@ export default function PaymentMethod() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-cyan-500/20 bg-white/5 p-8"
+            className="rounded-3xl border border-cyan-500/20 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.18)]"
           >
 
             <div className="mb-8 flex items-center gap-3">
@@ -125,7 +128,7 @@ export default function PaymentMethod() {
                   className="flex gap-4"
                 >
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-400 font-bold text-black">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-400 font-bold text-black transition-transform duration-300 group-hover:scale-110">
                     {index + 1}
                   </div>
 
