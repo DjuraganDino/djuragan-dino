@@ -14,7 +14,6 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", onScroll);
-
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -29,8 +28,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3">
-
+        <a href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
             alt="DJURAGAN DINO"
@@ -48,29 +46,28 @@ export default function Navbar() {
               Whiteout Survival
             </p>
           </div>
-
         </a>
 
-        {/* Desktop */}
+        {/* Desktop Menu */}
         <nav className="hidden items-center gap-8 md:flex">
 
           <a
             href="#services"
-            className="text-gray-300 transition hover:text-cyan-400"
+            className="font-medium text-gray-300 transition hover:text-cyan-400"
           >
             Layanan
           </a>
 
           <a
             href="#pricing"
-            className="text-gray-300 transition hover:text-cyan-400"
+            className="font-medium text-gray-300 transition hover:text-cyan-400"
           >
             Harga
           </a>
 
           <a
             href="#faq"
-            className="text-gray-300 transition hover:text-cyan-400"
+            className="font-medium text-gray-300 transition hover:text-cyan-400"
           >
             FAQ
           </a>
@@ -78,7 +75,8 @@ export default function Navbar() {
           <a
             href="https://wa.me/6288294084382"
             target="_blank"
-            className="rounded-full bg-cyan-400 px-6 py-3 font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
+            rel="noopener noreferrer"
+            className="rounded-full bg-cyan-400 px-6 py-3 font-bold text-black transition hover:scale-105 hover:bg-cyan-300"
           >
             Order Sekarang
           </a>
@@ -92,7 +90,6 @@ export default function Navbar() {
         >
           {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
-
       </div>
 
       {/* Mobile Menu */}
@@ -128,6 +125,7 @@ export default function Navbar() {
             <a
               href="https://wa.me/6288294084382"
               target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="rounded-xl bg-cyan-400 py-3 text-center font-bold text-black"
             >
