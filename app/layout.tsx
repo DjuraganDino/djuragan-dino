@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
+        url: "/images/logo.png",
         width: 512,
         height: 512,
         alt: "DJURAGAN DINO",
@@ -82,14 +82,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "DJURAGAN DINO | Jasa Joki Whiteout Survival",
-    description: "Jasa Joki Whiteout Survival terpercaya.",
-    images: ["/logo.png"],
+    description:
+      "Jasa Joki Whiteout Survival terpercaya. Daily Activity, Bear Trap, Frostfire Mine, Dreamscape Memory, Foundry Battle, hingga Sunfire Castle.",
+    images: ["/images/logo.png"],
   },
 
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
   },
 };
 
@@ -101,7 +102,7 @@ const schema = {
       "@id": "https://djuragan-dino.vercel.app/#organization",
       name: "DJURAGAN DINO",
       url: "https://djuragan-dino.vercel.app",
-      logo: "https://djuragan-dino.vercel.app/logo.png",
+      logo: "https://djuragan-dino.vercel.app/images/logo.png",
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+6288294084382",
@@ -143,7 +144,7 @@ export default function RootLayout({
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              c[a]=c[a]||function(){(c[a].q=c[a]||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "xqlpqwyvyg");
