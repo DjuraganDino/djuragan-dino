@@ -3,6 +3,24 @@
 import { motion } from "framer-motion";
 import { MessageCircle, ShieldCheck, Clock3 } from "lucide-react";
 
+const features = [
+  {
+    icon: ShieldCheck,
+    title: "Aman",
+    desc: "Akun dikerjakan dengan aman dan menjaga privasi customer.",
+  },
+  {
+    icon: Clock3,
+    title: "Fast Response",
+    desc: "Admin siap membalas chat dan memberikan update progress.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Transparan",
+    desc: "Seluruh proses pengerjaan dapat dipantau oleh customer.",
+  },
+];
+
 export default function Contact() {
   return (
     <section
@@ -23,11 +41,11 @@ export default function Contact() {
           className="rounded-3xl border border-cyan-500/20 bg-white/5 p-10 text-center"
         >
 
-          <p className="uppercase tracking-[4px] text-cyan-400 font-semibold">
+          <p className="font-semibold uppercase tracking-[4px] text-cyan-400">
             SIAP ORDER?
           </p>
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-black">
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
             Serahkan Akunmu Kepada
             <br />
             <span className="text-cyan-400">
@@ -44,57 +62,53 @@ export default function Contact() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
 
-            <div className="rounded-2xl border border-cyan-500/20 bg-white/5 p-6">
-              <ShieldCheck
-                size={42}
-                className="mx-auto mb-4 text-cyan-400"
-              />
+            {features.map((item, index) => {
+              const Icon = item.icon;
 
-              <h3 className="font-bold text-xl">
-                Aman
-              </h3>
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.1,
+                  }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    transition: {
+                      duration: 0.2,
+                      ease: "easeOut",
+                    },
+                  }}
+                  className="rounded-2xl border border-cyan-500/20 bg-white/5 p-6 transition-all duration-200 hover:border-cyan-400 hover:bg-cyan-500/10 hover:shadow-[0_0_35px_rgba(34,211,238,0.25)]"
+                >
+                  <Icon
+                    size={42}
+                    className="mx-auto mb-4 text-cyan-400"
+                  />
 
-              <p className="mt-2 text-gray-400">
-                Akun dikerjakan dengan aman dan menjaga privasi customer.
-              </p>
-            </div>
+                  <h3 className="text-xl font-bold">
+                    {item.title}
+                  </h3>
 
-            <div className="rounded-2xl border border-cyan-500/20 bg-white/5 p-6">
-              <Clock3
-                size={42}
-                className="mx-auto mb-4 text-cyan-400"
-              />
+                  <p className="mt-2 text-gray-400">
+                    {item.desc}
+                  </p>
 
-              <h3 className="font-bold text-xl">
-                Fast Response
-              </h3>
-
-              <p className="mt-2 text-gray-400">
-                Admin siap membalas chat dan memberikan update progress.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-cyan-500/20 bg-white/5 p-6">
-              <MessageCircle
-                size={42}
-                className="mx-auto mb-4 text-cyan-400"
-              />
-
-              <h3 className="font-bold text-xl">
-                Transparan
-              </h3>
-
-              <p className="mt-2 text-gray-400">
-                Seluruh proses pengerjaan dapat dipantau oleh customer.
-              </p>
-            </div>
+                </motion.div>
+              );
+            })}
 
           </div>
 
           <a
             href="https://wa.me/6288294084382"
             target="_blank"
-            className="mt-12 inline-flex items-center gap-3 rounded-full bg-cyan-400 px-10 py-5 text-lg font-bold text-black transition hover:scale-105 hover:bg-cyan-300"
+            rel="noopener noreferrer"
+            className="mt-12 inline-flex items-center gap-3 rounded-full bg-cyan-400 px-10 py-5 text-lg font-bold text-black transition duration-200 hover:scale-105 hover:bg-cyan-300"
           >
             <MessageCircle size={24} />
             ORDER VIA WHATSAPP

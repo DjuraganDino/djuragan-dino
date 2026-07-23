@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
 const faqs = [
@@ -86,83 +87,147 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-[#08111E] py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section
+      id="faq"
+      className="relative overflow-hidden bg-[#08111E] py-24 text-white"
+    >
+      {/* Glow */}
+      <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute -right-20 bottom-20 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]" />
 
-        {/* FAQ */}
-        <h2 className="mb-4 text-center text-5xl font-black text-cyan-400">
-          Frequently Asked Questions
-        </h2>
+      <div className="relative mx-auto max-w-5xl px-6">
 
-        <p className="mb-12 text-center text-gray-400">
-          Pertanyaan yang paling sering diajukan oleh pelanggan.
-        </p>
+        <div className="text-center">
 
-        <div className="space-y-5">
+          <p className="uppercase tracking-[4px] font-semibold text-cyan-400">
+            FAQ
+          </p>
+
+          <h2 className="mt-4 text-5xl font-black">
+            Frequently Asked Questions
+          </h2>
+
+          <p className="mt-5 text-gray-400">
+            Pertanyaan yang paling sering diajukan oleh pelanggan.
+          </p>
+
+        </div>
+
+        <div className="mt-14 space-y-5">
+
           {faqs.map((faq, index) => (
-            <div
+
+            <motion.div
               key={index}
-              className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-[#0D1B2A]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.05,
+              }}
+              whileHover={{
+                y: -5,
+                transition: {
+                  duration: 0.2,
+                  ease: "easeOut",
+                },
+              }}
+              className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-[#0D1B2A] transition-all duration-200 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.18)]"
             >
+
               <button
                 onClick={() => setOpen(open === index ? null : index)}
-                className="flex w-full items-center justify-between px-6 py-5 hover:bg-[#13283E] transition"
+                className="flex w-full items-center justify-between px-6 py-5 hover:bg-[#13283E] transition-colors"
               >
-                <span className="text-left text-lg font-semibold text-white">
+
+                <span className="text-left text-lg font-semibold">
                   {faq.question}
                 </span>
 
                 <span className="text-2xl font-bold text-cyan-400">
                   {open === index ? "−" : "+"}
                 </span>
+
               </button>
 
               {open === index && (
-                <div className="border-t border-cyan-500/20 bg-[#102235] px-6 py-5 text-gray-300">
+                <div className="border-t border-cyan-500/20 bg-[#102235] px-6 py-5 text-gray-300 leading-7">
                   {faq.answer}
                 </div>
               )}
-            </div>
+
+            </motion.div>
+
           ))}
+
         </div>
 
-        {/* Terms */}
-        <div className="mt-24">
+        <div className="mt-24 text-center">
 
-          <h2 className="text-center text-5xl font-black text-cyan-400">
+          <p className="uppercase tracking-[4px] font-semibold text-cyan-400">
+            Terms
+          </p>
+
+          <h2 className="mt-4 text-5xl font-black">
             Terms & Conditions
           </h2>
 
-          <p className="mx-auto mt-4 mb-12 max-w-3xl text-center text-gray-400">
+          <p className="mx-auto mt-5 mb-12 max-w-3xl text-gray-400">
             Dengan menggunakan layanan DJURAGAN DINO, pelanggan dianggap telah
             membaca, memahami, dan menyetujui seluruh ketentuan berikut.
           </p>
 
-          <div className="space-y-5">
-            {terms.map((item, index) => (
-              <div
-                key={index}
-                className="rounded-2xl border border-cyan-500/20 bg-[#0D1B2A] p-6"
-              >
-                <div className="flex items-start gap-4">
-                  <CheckCircle
-                    className="mt-1 shrink-0 text-cyan-400"
-                    size={22}
-                  />
+        </div>
 
-                  <div>
-                    <h3 className="text-lg font-bold text-white">
-                      {index + 1}. {item.title}
-                    </h3>
+        <div className="space-y-5">
 
-                    <p className="mt-2 leading-7 text-gray-300">
-                      {item.text}
-                    </p>
-                  </div>
+          {terms.map((item, index) => (
+
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.04,
+              }}
+              whileHover={{
+                y: -5,
+                scale: 1.01,
+                transition: {
+                  duration: 0.2,
+                  ease: "easeOut",
+                },
+              }}
+              className="rounded-2xl border border-cyan-500/20 bg-[#0D1B2A] p-6 transition-all duration-200 hover:border-cyan-400 hover:bg-cyan-500/5 hover:shadow-[0_0_30px_rgba(34,211,238,0.18)]"
+            >
+
+              <div className="flex items-start gap-4">
+
+                <CheckCircle
+                  className="mt-1 shrink-0 text-cyan-400"
+                  size={22}
+                />
+
+                <div>
+
+                  <h3 className="text-lg font-bold">
+                    {index + 1}. {item.title}
+                  </h3>
+
+                  <p className="mt-2 leading-7 text-gray-300">
+                    {item.text}
+                  </p>
+
                 </div>
+
               </div>
-            ))}
-          </div>
+
+            </motion.div>
+
+          ))}
 
         </div>
 

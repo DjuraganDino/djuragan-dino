@@ -79,11 +79,11 @@ export default function Pricing() {
       id="pricing"
       className="relative overflow-hidden bg-[#08111E] py-24 text-white"
     >
-      {/* Glow */}
       <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
       <div className="absolute -right-20 bottom-20 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
+
         <div className="text-center">
           <p className="font-semibold uppercase tracking-[4px] text-cyan-400">
             Pricing
@@ -101,18 +101,26 @@ export default function Pricing() {
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
           {pricing.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{
                 duration: 0.5,
                 delay: index * 0.1,
               }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className={`relative flex flex-col rounded-3xl border p-8 transition ${
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: {
+                  duration: 0.18,
+                  ease: "easeOut",
+                },
+              }}
+              className={`relative flex flex-col rounded-3xl border p-8 ${
                 item.popular
                   ? "border-cyan-400 bg-cyan-500/10 shadow-[0_0_35px_rgba(34,211,238,0.25)]"
                   : "border-cyan-500/20 bg-white/5"
@@ -124,7 +132,9 @@ export default function Pricing() {
                 </div>
               )}
 
-              <h3 className="text-2xl font-bold">{item.title}</h3>
+              <h3 className="text-2xl font-bold">
+                {item.title}
+              </h3>
 
               <p className="my-6 text-4xl font-black text-cyan-400">
                 {item.price}
@@ -157,9 +167,12 @@ export default function Pricing() {
               >
                 ORDER SEKARANG
               </a>
+
             </motion.div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

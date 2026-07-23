@@ -32,7 +32,7 @@ export default function Testimonials() {
 
         <div className="text-center">
 
-          <p className="uppercase tracking-[4px] text-cyan-400 font-semibold">
+          <p className="font-semibold uppercase tracking-[4px] text-cyan-400">
             TESTIMONI
           </p>
 
@@ -40,9 +40,9 @@ export default function Testimonials() {
             Apa Kata Customer?
           </h2>
 
-          <p className="mt-5 mx-auto max-w-2xl text-gray-400">
-            Kepuasan customer adalah prioritas kami. Berikut beberapa ulasan dari
-            pelanggan yang telah menggunakan jasa DJURAGAN DINO.
+          <p className="mx-auto mt-5 max-w-2xl text-gray-400">
+            Kepuasan customer adalah prioritas kami. Berikut beberapa ulasan
+            dari pelanggan yang telah menggunakan jasa DJURAGAN DINO.
           </p>
 
         </div>
@@ -55,16 +55,20 @@ export default function Testimonials() {
               key={item.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.15,
+                delay: index * 0.12,
               }}
-              viewport={{ once: true }}
               whileHover={{
                 y: -8,
                 scale: 1.02,
+                transition: {
+                  duration: 0.2,
+                  ease: "easeOut",
+                },
               }}
-              className="rounded-3xl border border-cyan-500/20 bg-white/5 p-8 shadow-lg transition"
+              className="rounded-3xl border border-cyan-500/20 bg-white/5 p-8 shadow-lg transition-all duration-200 hover:border-cyan-400 hover:bg-cyan-500/10 hover:shadow-[0_0_35px_rgba(34,211,238,0.25)]"
             >
 
               <div className="mb-5 flex">
