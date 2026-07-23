@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import WhyChoose from "@/components/WhyChoose";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
+import PaymentMethod from "@/components/PaymentMethod";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyChoose />
       <Testimonials />
       <Pricing />
+      <PaymentMethod />
       <FAQ />
       <Contact />
       <FloatingWhatsApp />
