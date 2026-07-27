@@ -28,6 +28,28 @@ const pricing = [
     ],
   },
   {
+    title: "1x Bear Trap",
+    price: "Rp5.000",
+    features: [
+      "Bear Trap selama 1x",
+      "Mengikuti strategi Alliance",
+      "Fokus memaksimalkan damage akun",
+      "Update progress secara berkala",
+      "Tidak termasuk layanan push rank",
+    ],
+  },
+  {
+    title: "Hunting Beast",
+    price: "Rp10.000 / 1000 Stamina",
+    features: [
+      "Pengerjaan Hunting Beast",
+      "1000 Stamina",
+      "Event Hunting Beast SVS",
+      "Event Hunting Beast tertentu",
+      "Update progress secara berkala",
+    ],
+  },
+  {
     title: "1 Month Daily Tasks",
     price: "Rp300.000",
     features: [
@@ -35,23 +57,23 @@ const pricing = [
       "Intel Mission",
       "Gathering Resource",
       "Claim semua Reward & Red Dot",
-      "Maintenance akun selama 30 Hari",
+      "Management akun selama 30 Hari",
     ],
   },
   {
     title: "Frostfire Mine",
-    price: "Rp20.000",
+    price: "Rp45.000",
     features: [
       "Pengerjaan 1x Event Frostfire Mine",
-      "Mengikuti strategi tim",
-      "Player berpengalaman",
       "Jasa pengerjaan saja",
+      "Player berpengalaman",
       "Tidak termasuk layanan push rank",
+      "Jika mendapatkan rank 1 ada harga tersendiri",
     ],
   },
   {
     title: "Foundry Battle",
-    price: "Rp20.000",
+    price: "Rp25.000",
     features: [
       "Pengerjaan 1x Event Foundry Battle",
       "Mengikuti strategi tim",
@@ -62,7 +84,7 @@ const pricing = [
   },
   {
     title: "Sunfire Castle / SVS",
-    price: "Rp10.000 (Minimum Point)",
+    price: "Rp25.000 (Minimum Point)",
     features: [
       "Pengerjaan Sunfire Castle / SVS",
       "Target Minimum Point",
