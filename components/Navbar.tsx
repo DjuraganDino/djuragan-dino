@@ -72,6 +72,17 @@ export default function Navbar() {
             FAQ
           </a>
 
+          {/* Discord */}
+          <a
+            href="https://discord.gg/sbtApekG8c"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-indigo-500 px-5 py-3 font-bold text-indigo-300 transition hover:scale-105 hover:bg-indigo-600 hover:text-white"
+          >
+            Discord
+          </a>
+
+          {/* WhatsApp */}
           <a
             href="https://wa.me/6288294084382"
             target="_blank"
@@ -122,6 +133,18 @@ export default function Navbar() {
               FAQ
             </a>
 
+            {/* Discord */}
+            <a
+              href="https://discord.gg/sbtApekG8c"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="rounded-xl border border-indigo-500 py-3 text-center font-bold text-indigo-300"
+            >
+              Join Discord
+            </a>
+
+            {/* WhatsApp */}
             <a
               href="https://wa.me/6288294084382"
               target="_blank"

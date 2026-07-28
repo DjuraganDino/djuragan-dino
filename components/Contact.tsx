@@ -104,15 +104,28 @@ export default function Contact() {
 
           </div>
 
-          <a
-            href="https://wa.me/6288294084382"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-12 inline-flex items-center gap-3 rounded-full bg-cyan-400 px-10 py-5 text-lg font-bold text-black transition duration-200 hover:scale-105 hover:bg-cyan-300"
-          >
-            <MessageCircle size={24} />
-            ORDER VIA WHATSAPP
-          </a>
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+            <a
+              href="https://wa.me/6288294084382"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full bg-cyan-400 px-10 py-5 text-lg font-bold text-black transition duration-200 hover:scale-105 hover:bg-cyan-300"
+            >
+              <MessageCircle size={24} />
+              ORDER VIA WHATSAPP
+            </a>
+
+            <a
+              href="https://discord.gg/sbtApekG8c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full border border-indigo-500 bg-indigo-600 px-10 py-5 text-lg font-bold text-white transition duration-200 hover:scale-105 hover:bg-indigo-500"
+            >
+              💜 JOIN DISCORD
+            </a>
+
+          </div>
 
         </motion.div>
 
